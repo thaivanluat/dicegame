@@ -51,7 +51,7 @@ export default {
     isWinner() {
       let { scoresPlayer, finalScore } = this;
 
-      if((scoresPlayer[0] >= finalScore || scoresPlayer[1] >= finalScore) && finalScore) {
+      if((scoresPlayer[0] >= finalScore || scoresPlayer[1] >= finalScore) && finalScore > 0) {
         this.isPlaying = false;
 
         return true;
@@ -71,6 +71,10 @@ export default {
     handleNewGame() {
       // console.log("App vue");
       this.isOpenPopup = true;
+
+      if(this.finalScore === "") {
+        this.finalScore = 50;
+      }
     },
 
     handleConfirm() {
@@ -79,7 +83,7 @@ export default {
       this.activePlayer = 0,
       this.scoresPlayer = [0, 0],
       this.dices = [1, 1],
-      this.currentScore = 0
+      this.currentScore = 0;
     },
     handleRollDices() {
       if(this.isPlaying) {
@@ -123,7 +127,7 @@ export default {
     },
 
     handleChangeFinalScore(e) {
-      let number = parseInt(e.target.value);
+      let number = Math.abs(parseInt(e.target.value));
       if(isNaN(number)) {
         this.finalScore = '';
       }
