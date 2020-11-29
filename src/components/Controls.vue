@@ -147,7 +147,7 @@ export default {
         top: 520px;
         color: #555;
         font-size: 18px;
-        font-family: 'Lato';
+        font-family: sans-serif;
         text-align: center;
         padding: 10px;
         width: 160px;
