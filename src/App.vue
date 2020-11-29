@@ -40,10 +40,10 @@ export default {
       isPlaying: false,
       isOpenPopup: false,
       activePlayer: 0,
-      scoresPlayer: [10, 10],
-      dices: [6, 6],
-      currentScore: 66,
-      finalScore: 100
+      scoresPlayer: [0, 0],
+      dices: [1, 1],
+      currentScore: 0,
+      finalScore: 50
     }
   },
 
@@ -51,7 +51,7 @@ export default {
     isWinner() {
       let { scoresPlayer, finalScore } = this;
 
-      if(scoresPlayer[0] >= finalScore || scoresPlayer[1] >= finalScore) {
+      if((scoresPlayer[0] >= finalScore || scoresPlayer[1] >= finalScore) && finalScore) {
         this.isPlaying = false;
 
         return true;
@@ -91,7 +91,8 @@ export default {
         if(dice1 == 1 || dice2 == 1) {
           let activePlayer = this.activePlayer;
           setTimeout(() => {
-            alert(`Nguoi choi Player ${activePlayer + 1} da quay trung so 1. Rat tiec`);
+            alert(this.$t('stop_message', {player: activePlayer+1}));
+            // alert(`Nguoi choi Player ${activePlayer + 1} da quay trung so 1. Rat tiec`);
           }, 10);
           this.switchPlayer();
         }
@@ -100,7 +101,7 @@ export default {
         }
       }
       else {
-        alert('Vui long chon new game');
+        alert(this.$t('please_choose_new_game'));
       }
     },
 
@@ -134,7 +135,7 @@ export default {
     switchPlayer() {
       this.activePlayer = this.activePlayer === 0 ? 1:0;
       this.currentScore = 0;
-    }
+    },
   }
 }
 </script>

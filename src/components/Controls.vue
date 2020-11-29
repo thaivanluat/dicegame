@@ -2,25 +2,28 @@
     <div class="wrapper-control">
         <button 
             v-on:click="newGame"
-            class="control btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
+            class="control btn-new"><i class="ion-ios-plus-outline"></i>{{ $t("new_game") }}</button>
         <button 
             v-on:click="rollDices"
-            class="control btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
+            class="control btn-roll"><i class="ion-ios-loop"></i>{{ $t("roll_dice") }}</button>
         <button 
             v-on:click="holdScore"
-            class="control btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+            v-bind:title="$t('hold_tooltip')"
+            class="control btn-hold tooltip"><i class="ion-ios-download-outline"></i>{{ $t("hold") }}
+        </button>
         
         <input 
             v-bind:value="finalScore"
             v-bind:disabled="isPlaying"
             v-on:input="setFinalScore"
-            type="number" placeholder="Final score" class="final-score">
+            v-bind:title="$t('score_tooltip')"
+            type="number" v-bind:placeholder="$t('final_score')" class="final-score">
 
         <div class="control-lang">
-            <a class="flag">
+            <a class="flag" @click="changeLanguage('vn')">
                 <img src="/public/assets/vietnam.png" alt="">
             </a>
-            <a class="flag">
+            <a class="flag" @click="changeLanguage('en')">
                 <img src="/public/assets/united-states.png" alt="">
             </a>
         </div>
@@ -59,6 +62,9 @@ export default {
         },
         setFinalScore(e) {
             this.$emit('handleChangeFinalScore', e);
+        },
+        changeLanguage(language) {
+            this.$i18n.locale = language    ;
         }
     }
 }
@@ -73,7 +79,7 @@ export default {
         color: #555;
         background: none;
         border: none;
-        font-family: Lato;
+        font-family: sans-serif;
         font-size: 20px;
         text-transform: uppercase;
         cursor: pointer;

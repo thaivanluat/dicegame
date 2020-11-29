@@ -8,7 +8,7 @@
             <div class="player-name">{{ getNamePlayer(0) }}</div>
             <div class="player-score">{{ scoresPlayer[0] }}</div>
             <div class="player-current-box">
-                <div class="player-current-label">Current</div>
+                <div class="player-current-label">{{ $t('current') }}</div>
                 <div class="player-current-score">{{ activePlayer == 0 ? currentScore : 0 }}</div>
             </div>
         </div>
@@ -21,7 +21,7 @@
             <div class="player-name">{{ getNamePlayer(1) }}</div>
             <div class="player-score">{{ scoresPlayer[1] }}</div>
             <div class="player-current-box">
-                <div class="player-current-label">Current</div>
+                <div class="player-current-label">{{ $t('current') }}</div>
                 <div class="player-current-score">{{ activePlayer == 1 ? currentScore : 0 }}</div>
             </div>
         </div>
@@ -52,11 +52,11 @@ export default {
 
     methods: {
         getNamePlayer(index) {
-            let defaultName = 'Player ' + (index+1);
+            let defaultName = this.$t('player') + " " + (index+1);
 
 
             if(this.activePlayer == index && this.isWinner) {
-                defaultName = 'Winner';
+                defaultName = this.$t('winner');
             }
 
             return defaultName;
@@ -83,6 +83,7 @@ export default {
         margin-top: 20px;
         margin-bottom: 10px;
         position: relative;
+        font-family: monospace;
     }
 
     .player-score {
@@ -102,8 +103,7 @@ export default {
         position: absolute;
         color: #477ced;
         top: -7px;
-        right: 10px;
-        
+        right: -20px;
     }
 
     .player-current-box {
@@ -120,6 +120,7 @@ export default {
         margin-bottom: 10px;
         font-size: 12px;
         color: #fff;
+        font-family: sans-serif;
     }
 
     .player-current-score {

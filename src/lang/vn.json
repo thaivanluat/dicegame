@@ -1,0 +1,17 @@
+{
+    "player": "Người chơi",
+    "new_game": "Bắt đầu",
+    "roll_dice": "Đổ xúc xắc",
+    "please_choose_new_game": "Vui lòng chọn Bắt đầu",
+    "current": "Điểm hiện tại",
+    "hold": "Giữ điểm",
+    "hold_tooltip": "Giữ điểm để cộng điểm hiện tại vào điểm chính thức",
+    "score": "Điểm",
+    "score_tooltip": "Điểm cần đạt được trước để chiến thắng trò chơi",
+    "rule": "Luật chơi",
+    "rule_detail": "Bắt đầu bằng người chơi 1. Hai người lần lượt đổ xúc xắc. Người chơi có thể giữ điểm để kết thúc lượt chơi hoặc tiếp tục đổ xúc xắc. Nếu một trong 2 xúc xắc quay vào 1 nút, lượt chơi kết thúc và người chơi không được cộng điểm",
+    "ok": "Đã hiểu",
+    "winner": "Chiến thắng",
+    "final_score": "Điểm thắng",
+    "stop_message": "Người chơi {player} đã quay trúng số 1. Rất tiếc !"
+}

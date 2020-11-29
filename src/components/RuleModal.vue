@@ -1,10 +1,10 @@
 <template>
   <div class="wrapper-popup" v-bind:class="getClassPopup">
       <div class="rule">
-        <h3>Luat choi</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum voluptas aspernatur possimus exercitationem, commodi a architecto earum, tempore corporis accusamus neque voluptate. Nam ipsum expedita veritatis deleniti delectus, accusantium rerum.</p>
+        <h3>{{ $t("rule") }}</h3>
+        <p>{{ $t("rule_detail") }}</p>
         <button class="confirm"
-        v-on:click="confirm">OK</button>
+        v-on:click="confirm">{{ $t("ok") }}</button>
       </div>
   </div>
 </template>
@@ -83,6 +83,7 @@ export default {
         border: 2px solid #333;
         background-color: #fff;
         transition: all .3s ease;
+        float: right;
     }
 
     .rule .confirm:hover {

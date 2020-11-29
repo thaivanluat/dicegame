@@ -1,0 +1,17 @@
+{
+    "player": "Player",
+    "new_game": "New Game",
+    "roll_dice": "Roll Dice",
+    "please_choose_new_game": "Please choose new game",
+    "current": "Current",
+    "hold": "Hold",
+    "hold_tooltip": "Hold score to add current score to the player score",
+    "score": "Score",
+    "score_tooltip": "Points need to be achieved first to win the game",
+    "rule": "Rule",
+    "rule_detail": "Starting with player 1. Two players take turns rolling the dice. Player can hold score to end a turn or continue rolling. If one of the dice hits 1 point, the turn ends and the player gets no points",
+    "ok": "Understood",
+    "winner": "Winner",
+    "final_score": "Final Score",
+    "stop_message": "Player {player} had rolled a 1. Unlucky !"
+}
