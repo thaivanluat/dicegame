@@ -21,10 +21,10 @@
 
         <div class="control-lang">
             <a class="flag" @click="changeLanguage('vn')">
-                <img src="/public/assets/vietnam.png" alt="">
+                <img v-bind:class="{active: this.$i18n.locale == 'vn'}" src="/public/assets/vietnam.png" alt="">
             </a>
             <a class="flag" @click="changeLanguage('en')">
-                <img src="/public/assets/united-states.png" alt="">
+                <img v-bind:class="{active: this.$i18n.locale == 'en'}" src="/public/assets/united-states.png" alt="">
             </a>
         </div>
     </div>
@@ -129,6 +129,12 @@ export default {
         border: 2px solid black; 
         cursor: pointer;
     }
+
+    a.flag img.active{
+        border: 2px solid black; 
+        cursor: pointer;
+    }
+
 
     .btn-new { top: 50px;}
     .btn-roll { top: 403px;}
