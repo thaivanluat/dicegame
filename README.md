@@ -1,6 +1,10 @@
 # dicegame
 
-> A Vue.js project
+> A Vue.js project game <br>
+> Link demo: 
+https://dice-game-thaivan.herokuapp.com/ <br>
+*A dice game for 2 player (Check you luck)*
+  
 
 ## Build Setup
 
